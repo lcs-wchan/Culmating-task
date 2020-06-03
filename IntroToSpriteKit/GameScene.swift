@@ -12,8 +12,11 @@ import AVFoundation
 
 class GameScene: SKScene {
     let g = 9.8
-    let height = 1000
-    var circle = SKShapeNode()
+    var circleWithParachute = SKShapeNode()
+    var withParachuteSpeed:Double = 0
+    
+    var circleWithoutParachute = SKShapeNode()
+    var withoutParachuteSpeed:Double = 0
 
    
     // This function runs once to set up the scene
@@ -23,9 +26,13 @@ class GameScene: SKScene {
         self.backgroundColor = .black
         
         //add a circle
-        circle = SKShapeNode(circleOfRadius: 10)
-        circle.position = CGPoint(x: 300, y: 400)
-        addChild(circle)
+        circleWithParachute = SKShapeNode(circleOfRadius: 10)
+        circleWithParachute.position = CGPoint(x: 300, y: 400)
+        addChild(circleWithParachute)
+        
+        circleWithoutParachute = SKShapeNode(circleOfRadius: 10)
+        circleWithoutParachute.position = CGPoint(x: 500, y: 400)
+        addChild(circleWithoutParachute)
     
 
     }
@@ -34,15 +41,19 @@ class GameScene: SKScene {
     // Avoid putting computationally intense code in this function to maintain high performance
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        let y = accelerationWithParachute(velocity: 3, mass: 40)
-        let newPosition = CGPoint(x: circle.position.x, y: circle.position.y - CGFloat(y))
-        circle.position = newPosition
+        withParachuteSpeed += accelerationWithParachute(velocity: withParachuteSpeed, mass: 1)
+        print(withParachuteSpeed)
+        let newPosition = CGPoint(x: circleWithParachute.position.x, y: circleWithParachute.position.y - CGFloat(withParachuteSpeed))
+        circleWithParachute.position = newPosition
         
-        
+        withoutParachuteSpeed += accelerationWithoutParachute(velocity: withoutParachuteSpeed, mass: 1)
+        print(withoutParachuteSpeed)
+        let newPosition1 = CGPoint(x: circleWithoutParachute.position.x, y: circleWithoutParachute.position.y-CGFloat(withoutParachuteSpeed))
+        circleWithoutParachute.position = newPosition1
     }
     
     func accelerationWithoutParachute (velocity: Double, mass: Double) -> Double {
-        return g - pow(velocity, 2) * 0.031734 / mass
+        return (g - pow(velocity, 2) * 0.031734 / mass)/60
     }
 
 
@@ -54,6 +65,6 @@ class GameScene: SKScene {
     //
 
     func accelerationWithParachute (velocity: Double, mass: Double) -> Double {
-        return g - pow(velocity, 2) * 43.046 / mass
+        return (g - pow(velocity, 2) * 43.046 / mass)/60
     }
 }
