@@ -29,7 +29,11 @@ class ParameterController: NSViewController {
     // This function gets invoked when the slider's value changes
     @IBAction func sliderHeightValueChanged(_ sender: NSSlider) {
         
+        // DEBUG: What value was selected?
         print(sender.integerValue)
+        
+        // Update the label to show what height has been selected
+        labelHeight.stringValue = String(sender.integerValue)
         
     }
 }
