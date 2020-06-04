@@ -12,8 +12,12 @@ import GameplayKit
 
 class ViewController: NSViewController {
 
+    // MARK: Properties & outlets
+    var initialHeight: Int = 0
+    
     @IBOutlet var skView: SKView!
     
+    // MARK: Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +33,7 @@ class ViewController: NSViewController {
         let sceneSize = CGSize(width: 800, height: 600)
         let scene = GameScene(size: sceneSize)
         scene.scaleMode = .aspectFill
+        scene.initialHeight = self.initialHeight
         
         // Show frames per second in the view
         self.skView.showsFPS = true

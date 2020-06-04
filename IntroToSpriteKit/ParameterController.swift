@@ -25,6 +25,21 @@ class ParameterController: NSViewController {
         // All the customization happens below...
         
     }
+    
+    // Method is called right before the segue happen
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        
+        
+        // When the next window is the animation, pass certain pieces of information forward
+        if let nextWindowController = segue.destinationController as? ViewController {
+            
+            // Pass the initial height on
+            nextWindowController.initialHeight = labelHeight.integerValue
+            
+        }
+        
+        
+    }
 
     // This function gets invoked when the slider's value changes
     @IBAction func sliderHeightValueChanged(_ sender: NSSlider) {

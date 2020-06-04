@@ -11,6 +11,9 @@ import GameplayKit
 import AVFoundation
 
 class GameScene: SKScene {
+    
+    // MARK: Properties
+    var initialHeight: Int = 0
     let g = 9.8
     var circleWithParachute = SKShapeNode()
     var withParachuteSpeed:Double = 0
@@ -18,7 +21,7 @@ class GameScene: SKScene {
     var circleWithoutParachute = SKShapeNode()
     var withoutParachuteSpeed:Double = 0
 
-   
+    // MARK: Methods
     // This function runs once to set up the scene
     override func didMove(to view: SKView) {
         
@@ -27,11 +30,11 @@ class GameScene: SKScene {
         
         //add a circle
         circleWithParachute = SKShapeNode(circleOfRadius: 10)
-        circleWithParachute.position = CGPoint(x: 300, y: 400)
+        circleWithParachute.position = CGPoint(x: 300, y: self.initialHeight)
         addChild(circleWithParachute)
         
         circleWithoutParachute = SKShapeNode(circleOfRadius: 10)
-        circleWithoutParachute.position = CGPoint(x: 500, y: 400)
+        circleWithoutParachute.position = CGPoint(x: 500, y: self.initialHeight)
         addChild(circleWithoutParachute)
     
 
