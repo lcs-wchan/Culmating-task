@@ -14,6 +14,7 @@
 		8127943F239BEC4C000EBED0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8127943E239BEC4C000EBED0 /* ViewController.swift */; };
 		81279441239BEC4D000EBED0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81279440239BEC4D000EBED0 /* Assets.xcassets */; };
 		81279444239BEC4D000EBED0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81279442239BEC4D000EBED0 /* Main.storyboard */; };
+		9A4932402489585100C3774C /* ParameterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A49323F2489585100C3774C /* ParameterController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		81279445239BEC4D000EBED0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81279446239BEC4D000EBED0 /* IntroToSpriteKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IntroToSpriteKit.entitlements; sourceTree = "<group>"; };
 		8127944C239BEC6A000EBED0 /* IntroToSpriteKit.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = IntroToSpriteKit.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9A49323F2489585100C3774C /* ParameterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				81279446239BEC4D000EBED0 /* IntroToSpriteKit.entitlements */,
 				0E0C826423A16E0600DC5990 /* sleigh-bells-excerpt.mp3 */,
 				0EF3302923A0433100A83858 /* Fire.sks */,
+				9A49323F2489585100C3774C /* ParameterController.swift */,
 			);
 			path = IntroToSpriteKit;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8127943F239BEC4C000EBED0 /* ViewController.swift in Sources */,
+				9A4932402489585100C3774C /* ParameterController.swift in Sources */,
 				8127943D239BEC4C000EBED0 /* GameScene.swift in Sources */,
 				81279437239BEC4C000EBED0 /* AppDelegate.swift in Sources */,
 			);
