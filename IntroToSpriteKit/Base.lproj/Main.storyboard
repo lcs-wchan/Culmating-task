@@ -741,7 +741,30 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PRs-Nu-ECu">
                                 <rect key="frame" x="173" y="214" width="105" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="500" id="0sk-o1-C6s">
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="0" id="0sk-o1-C6s">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l9D-sh-g1F">
+                                <rect key="frame" x="159" y="190" width="134" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Parachute Height (m)" id="xmy-vZ-n7d">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jcj-Oo-MXF">
+                                <rect key="frame" x="177" y="156" width="96" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="Wwx-Yo-4mP"/>
+                            </slider>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E0f-Bo-Yc5">
+                                <rect key="frame" x="173" y="125" width="105" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="0" id="1OE-tR-CZs">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -751,7 +774,9 @@
                     </view>
                     <connections>
                         <outlet property="labelHeight" destination="PRs-Nu-ECu" id="Bkp-eZ-30s"/>
+                        <outlet property="labelParachuteHeight" destination="E0f-Bo-Yc5" id="T5D-cI-mZ6"/>
                         <outlet property="sliderHeight" destination="4qz-zw-SJf" id="O1K-YY-NL1"/>
+                        <outlet property="sliderParachuteHeight" destination="Jcj-Oo-MXF" id="hhe-Mo-Yvt"/>
                     </connections>
                 </viewController>
                 <customObject id="caz-6P-tqI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

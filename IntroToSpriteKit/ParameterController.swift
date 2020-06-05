@@ -14,6 +14,9 @@ class ParameterController: NSViewController {
     // MARK: Properties & Outlets
     @IBOutlet weak var labelHeight: NSTextField!
     @IBOutlet weak var sliderHeight: NSSlider!
+    @IBOutlet weak var labelParachuteHeight: NSTextField!
+    @IBOutlet weak var sliderParachuteHeight: NSSlider!
+    
     
     // MARK: Methods
     
@@ -36,6 +39,8 @@ class ParameterController: NSViewController {
             // Pass the initial height on
             nextWindowController.initialHeight = labelHeight.integerValue
             
+            nextWindowController.initialParachuteHeight = labelParachuteHeight.integerValue
+            
         }
         
         
@@ -50,5 +55,6 @@ class ParameterController: NSViewController {
         // Update the label to show what height has been selected
         labelHeight.stringValue = String(sender.integerValue)
         
+        labelParachuteHeight.stringValue = String(sender.integerValue)
     }
 }

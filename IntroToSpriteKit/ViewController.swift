@@ -14,6 +14,7 @@ class ViewController: NSViewController {
 
     // MARK: Properties & outlets
     var initialHeight: Int = 0
+    var initialParachuteHeight : Int = 0
     
     @IBOutlet var skView: SKView!
     
@@ -34,6 +35,7 @@ class ViewController: NSViewController {
         let scene = GameScene(size: sceneSize)
         scene.scaleMode = .aspectFill
         scene.initialHeight = self.initialHeight
+        scene.initialParachuteHeight = self.initialParachuteHeight
         
         // Show frames per second in the view
         self.skView.showsFPS = true

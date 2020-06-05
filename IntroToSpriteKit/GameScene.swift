@@ -14,6 +14,8 @@ class GameScene: SKScene {
     
     // MARK: Properties
     var initialHeight: Int = 0
+    var initialParachuteHeight: Int = 0
+    var mass: Int = 0
     let g = 9.8
     var circleWithParachute = SKShapeNode()
     var withParachuteSpeed:Double = 0
@@ -30,7 +32,7 @@ class GameScene: SKScene {
         
         //add a circle
         circleWithParachute = SKShapeNode(circleOfRadius: 10)
-        circleWithParachute.position = CGPoint(x: 300, y: self.initialHeight)
+        circleWithParachute.position = CGPoint(x: 300, y: self.initialParachuteHeight)
         addChild(circleWithParachute)
         
         circleWithoutParachute = SKShapeNode(circleOfRadius: 10)
