@@ -28,6 +28,9 @@ class ParameterController: NSViewController {
         super.viewDidLoad()
         
         // All the customization happens below...
+        labelHeight.stringValue = String(sliderHeight.stringValue)
+        labelParachuteHeight.stringValue = String(sliderParachuteHeight.stringValue)
+        labelMass.stringValue = String(sliderMass.stringValue)
         
     }
     
