@@ -61,6 +61,13 @@ class ParameterController: NSViewController {
         // Update the label to show what height has been selected
         labelHeight.stringValue = String(sender.integerValue)
         
+        // The maximum parachute height should never be higher than the initial height
+//        print("Initial height is \(sender.integerValue)")
+//        print("Parachute height is \(sliderParachuteHeight.integerValue)")
+        sliderParachuteHeight.maxValue = sender.doubleValue
+        labelParachuteHeight.stringValue = String(sender.integerValue)
+        
+        
     }
     
     @IBAction func sliderParachuteHeightValueChanged(_ sender: NSSlider) {
