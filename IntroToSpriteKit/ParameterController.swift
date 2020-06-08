@@ -16,6 +16,8 @@ class ParameterController: NSViewController {
     @IBOutlet weak var sliderHeight: NSSlider!
     @IBOutlet weak var labelParachuteHeight: NSTextField!
     @IBOutlet weak var sliderParachuteHeight: NSSlider!
+    @IBOutlet weak var labelMass: NSTextField!
+    @IBOutlet weak var sliderMass: NSSlider!
     
     
     // MARK: Methods
@@ -40,12 +42,13 @@ class ParameterController: NSViewController {
             nextWindowController.initialHeight = labelHeight.integerValue
             
             nextWindowController.initialParachuteHeight = labelParachuteHeight.integerValue
+            nextWindowController.mass = labelMass.integerValue
             
         }
         
         
     }
-
+    
     // This function gets invoked when the slider's value changes
     @IBAction func sliderHeightValueChanged(_ sender: NSSlider) {
         
@@ -55,6 +58,25 @@ class ParameterController: NSViewController {
         // Update the label to show what height has been selected
         labelHeight.stringValue = String(sender.integerValue)
         
+    }
+    
+    @IBAction func sliderParachuteHeightValueChanged(_ sender: NSSlider) {
+        
+        // DEBUG: What value was selected?
+        print(sender.integerValue)
+        
+        // Update the label to show what height has been selected
         labelParachuteHeight.stringValue = String(sender.integerValue)
     }
+    @IBAction func sliderMassValueChanged(_ sender: NSSlider) {
+        
+        // DEBUG: What value was selected?
+        print(sender.integerValue)
+        
+        // Update the label to show what height has been selected
+        labelMass.stringValue = String(sender.integerValue)
+    }
+    
+    
+    
 }

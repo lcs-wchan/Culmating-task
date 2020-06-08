@@ -724,7 +724,7 @@
                             <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4qz-zw-SJf">
                                 <rect key="frame" x="177" y="236" width="96" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <sliderCell key="cell" state="on" alignment="left" minValue="400" maxValue="600" doubleValue="500" tickMarkPosition="above" sliderType="linear" id="Xxe-B8-Si9"/>
+                                <sliderCell key="cell" alignment="left" minValue="400" maxValue="600" doubleValue="500.20833333333337" tickMarkPosition="above" sliderType="linear" id="Xxe-B8-Si9"/>
                                 <connections>
                                     <action selector="sliderHeightValueChanged:" target="dhZ-3l-nMO" id="f20-OY-ZDY"/>
                                 </connections>
@@ -759,7 +759,10 @@
                             <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jcj-Oo-MXF">
                                 <rect key="frame" x="177" y="156" width="96" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="Wwx-Yo-4mP"/>
+                                <sliderCell key="cell" state="on" alignment="left" minValue="100" maxValue="400" doubleValue="250" tickMarkPosition="above" sliderType="linear" id="Wwx-Yo-4mP"/>
+                                <connections>
+                                    <action selector="sliderParachuteHeightValueChanged:" target="dhZ-3l-nMO" id="PMd-nW-zJs"/>
+                                </connections>
                             </slider>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E0f-Bo-Yc5">
                                 <rect key="frame" x="173" y="125" width="105" height="16"/>
@@ -770,12 +773,40 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JGs-sg-jMQ">
+                                <rect key="frame" x="193" y="108" width="64" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Mass (kg)" id="bKY-pa-Ebf">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pUf-uW-tgd">
+                                <rect key="frame" x="177" y="76" width="96" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <sliderCell key="cell" state="on" alignment="left" minValue="30" maxValue="330" doubleValue="180" tickMarkPosition="above" sliderType="linear" id="M5S-CQ-Zyj"/>
+                                <connections>
+                                    <action selector="sliderMassValueChanged:" target="dhZ-3l-nMO" id="ztp-T7-SKa"/>
+                                </connections>
+                            </slider>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vJg-ha-fUb">
+                                <rect key="frame" x="198" y="49" width="54" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="0" id="g2N-2e-JDz">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="labelHeight" destination="PRs-Nu-ECu" id="Bkp-eZ-30s"/>
+                        <outlet property="labelMass" destination="vJg-ha-fUb" id="dwE-dd-85I"/>
                         <outlet property="labelParachuteHeight" destination="E0f-Bo-Yc5" id="T5D-cI-mZ6"/>
                         <outlet property="sliderHeight" destination="4qz-zw-SJf" id="O1K-YY-NL1"/>
+                        <outlet property="sliderMass" destination="pUf-uW-tgd" id="zGW-0c-z2b"/>
                         <outlet property="sliderParachuteHeight" destination="Jcj-Oo-MXF" id="hhe-Mo-Yvt"/>
                     </connections>
                 </viewController>

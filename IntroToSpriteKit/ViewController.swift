@@ -15,6 +15,7 @@ class ViewController: NSViewController {
     // MARK: Properties & outlets
     var initialHeight: Int = 0
     var initialParachuteHeight : Int = 0
+    var mass: Int = 0
     
     @IBOutlet var skView: SKView!
     

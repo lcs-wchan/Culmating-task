@@ -15,7 +15,8 @@ class GameScene: SKScene {
     // MARK: Properties
     var initialHeight: Int = 0
     var initialParachuteHeight: Int = 0
-    var mass: Int = 0
+    var mass: Double = 0
+
     let g = 9.8
     var circleWithParachute = SKShapeNode()
     var withParachuteSpeed:Double = 0
@@ -46,12 +47,12 @@ class GameScene: SKScene {
     // Avoid putting computationally intense code in this function to maintain high performance
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        withParachuteSpeed += accelerationWithParachute(velocity: withParachuteSpeed, mass: 1)
+        withParachuteSpeed += accelerationWithParachute(velocity: withParachuteSpeed, mass: mass)
         print(withParachuteSpeed)
         let newPosition = CGPoint(x: circleWithParachute.position.x, y: circleWithParachute.position.y - CGFloat(withParachuteSpeed))
         circleWithParachute.position = newPosition
         
-        withoutParachuteSpeed += accelerationWithoutParachute(velocity: withoutParachuteSpeed, mass: 1)
+        withoutParachuteSpeed += accelerationWithoutParachute(velocity: withoutParachuteSpeed, mass: mass)
         print(withoutParachuteSpeed)
         let newPosition1 = CGPoint(x: circleWithoutParachute.position.x, y: circleWithoutParachute.position.y-CGFloat(withoutParachuteSpeed))
         circleWithoutParachute.position = newPosition1
