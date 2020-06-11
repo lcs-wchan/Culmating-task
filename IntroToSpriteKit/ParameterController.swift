@@ -42,10 +42,10 @@ class ParameterController: NSViewController {
         if let nextWindowController = segue.destinationController as? ViewController {
             
             // Pass the initial height on
-            nextWindowController.initialHeight = labelHeight.integerValue
+            nextWindowController.initialHeight = Int(labelHeight.integerValue)
             
-            nextWindowController.initialParachuteHeight = labelParachuteHeight.integerValue
-            nextWindowController.mass = labelMass.integerValue
+            nextWindowController.initialParachuteHeight = Int(labelParachuteHeight.integerValue)
+            nextWindowController.mass = Int(labelMass.integerValue)
             
         }
         
@@ -56,10 +56,10 @@ class ParameterController: NSViewController {
     @IBAction func sliderHeightValueChanged(_ sender: NSSlider) {
         
         // DEBUG: What value was selected?
-        print(sender.integerValue)
+        print(sender.doubleValue)
         
         // Update the label to show what height has been selected
-        labelHeight.stringValue = String(sender.integerValue)
+        labelHeight.stringValue = String(sender.doubleValue)
         
         // The maximum parachute height should never be higher than the initial height
 //        print("Initial height is \(sender.integerValue)")

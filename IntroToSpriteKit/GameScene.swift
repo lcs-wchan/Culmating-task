@@ -72,9 +72,14 @@ class GameScene: SKScene {
         circleWithoutParachute.position = newPosition1
     }
     
-    func accelerationWithoutParachute (velocity: Double, mass: Double) -> Double {
-        return (g - (pow(velocity, 2) * 0.031734 / mass))/60
-    }
+// calculate new height
+    height = height - velocity * dt
+    height -= 0.5 * acceleration * pow(dt *2)
+    print ("New height is: \(height)")
+    
+//    func accelerationWithoutParachute (velocity: Double, mass: Double) -> Double {
+//        return (g - (pow(velocity, 2) * 0.031734 / mass))/60
+//    }
 
 
     //acceleration(velocity: 0.98, mass: 50)
@@ -84,7 +89,7 @@ class GameScene: SKScene {
     //}
     //
 
-    func accelerationWithParachute (velocity: Double, mass: Double) -> Double {
-        return (g - (pow(velocity, 2) * 43.046 / mass))/60
-    }
+//    func accelerationWithParachute (velocity: Double, mass: Double) -> Double {
+//        return (g - (pow(velocity, 2) * 43.046 / mass))/60
+//    }
 }
