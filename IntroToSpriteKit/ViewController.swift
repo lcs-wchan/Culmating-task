@@ -35,8 +35,9 @@ class ViewController: NSViewController {
         let sceneSize = CGSize(width: 800, height: 600)
         let scene = GameScene(size: sceneSize)
         scene.scaleMode = .aspectFill
-        scene.initialHeight = self.initialHeight
-        scene.initialParachuteHeight = self.initialParachuteHeight
+        scene.initialHeight = Double(self.initialHeight)
+        scene.initialParachuteHeight = Double(self.initialParachuteHeight)
+        
         
         // Show frames per second in the view
         self.skView.showsFPS = true

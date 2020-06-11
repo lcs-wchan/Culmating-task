@@ -11,11 +11,14 @@ import GameplayKit
 import AVFoundation
 
 class GameScene: SKScene {
-    
+
     // MARK: Properties
-    var initialHeight: Int = 0
-    var initialParachuteHeight: Int = 0
+    var initialHeight: Double = 0
+    var initialParachuteHeight: Double = 0
     var mass: Double = 0
+    var velocity = 0
+    var lastUpdateTime: TimeInterval = 0
+    var dt: TimeInterval = 0
 
     let g = 9.8
     var circleWithParachute = SKShapeNode()
@@ -45,21 +48,32 @@ class GameScene: SKScene {
     
     // This runs before each frame is rendered
     // Avoid putting computationally intense code in this function to maintain high performance
+    // NOTE: This method is called about 60 times per second
     override func update(_ currentTime: TimeInterval) {
+        
+        if lastUpdateTime > 0 {
+            dt = currentTime - lastUpdateTime
+        } else {
+            dt = 0
+        }
+        lastUpdateTime = currentTime
+        print ("\(dt*1000) millisecond since last update")
+        
         // Called before each frame is rendered
         withParachuteSpeed += accelerationWithParachute(velocity: withParachuteSpeed, mass: mass)
-        print(withParachuteSpeed)
+        print("withParachuteSpeed is \(withParachuteSpeed)")
         let newPosition = CGPoint(x: circleWithParachute.position.x, y: circleWithParachute.position.y - CGFloat(withParachuteSpeed))
         circleWithParachute.position = newPosition
         
         withoutParachuteSpeed += accelerationWithoutParachute(velocity: withoutParachuteSpeed, mass: mass)
-        print(withoutParachuteSpeed)
+        print("withoutParachuteSpeed is \(withoutParachuteSpeed)")
+        print("--")
         let newPosition1 = CGPoint(x: circleWithoutParachute.position.x, y: circleWithoutParachute.position.y-CGFloat(withoutParachuteSpeed))
         circleWithoutParachute.position = newPosition1
     }
     
     func accelerationWithoutParachute (velocity: Double, mass: Double) -> Double {
-        return (g - pow(velocity, 2) * 0.031734 / mass)/60
+        return (g - (pow(velocity, 2) * 0.031734 / mass))/60
     }
 
 
@@ -71,6 +85,6 @@ class GameScene: SKScene {
     //
 
     func accelerationWithParachute (velocity: Double, mass: Double) -> Double {
-        return (g - pow(velocity, 2) * 43.046 / mass)/60
+        return (g - (pow(velocity, 2) * 43.046 / mass))/60
     }
 }
